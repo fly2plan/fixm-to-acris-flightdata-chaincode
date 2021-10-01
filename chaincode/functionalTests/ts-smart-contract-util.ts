@@ -4,9 +4,10 @@
 */
 
 import * as fabricNetwork from 'fabric-network';
-import * as fs from 'fs-extra';
+
 import * as yaml from 'js-yaml';
 import { URL } from 'url';
+import * as fs from 'fs';
 
 import * as os from 'os';
 import * as path from 'path';
@@ -17,7 +18,7 @@ export class SmartContractUtil {
         const homedir = os.homedir();
         const connectionProfilePath: string = '<connection profile path>';
 
-        const connectionProfileContents: any = await fs.readFile(connectionProfilePath, 'utf8');
+        const connectionProfileContents: any = fs.readFileSync(connectionProfilePath, 'utf-8');
         if (connectionProfilePath.endsWith('.json')) {
             return JSON.parse(connectionProfileContents);
         } else if (connectionProfilePath.endsWith('.yaml') || connectionProfilePath.endsWith('.yml')) {

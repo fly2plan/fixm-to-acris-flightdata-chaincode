@@ -3,8 +3,8 @@
  */
 
 import deepmerge = require('deepmerge');
-import { Context, Contract, Info, Returns, Transaction, } from 'fabric-contract-api';
-import { transformFixmToAcris } from './fixmconverter/lib/parser.js';
+import { Context, Contract } from 'fabric-contract-api';
+import { transformFixmToAcris } from './fixmconverter/lib/parser';
 import { AcrisDataHelper } from './utils/acrisDataUtils';
 import { AcrisDataHistory, AcrisDataModel } from './model/acris-flight-data';
 import{getMspID, getTxnID} from './utils/networkUtils';
