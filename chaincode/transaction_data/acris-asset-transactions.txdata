@@ -1,0 +1,44 @@
+[
+    {
+        "transactionName": "acrisAssetExists",
+        "transactionLabel": "A test acrisAssetExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "createAcrisAsset",
+        "transactionLabel": "A test createAcrisAsset transaction",
+        "arguments": [
+            "001",
+            "some value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "readAcrisAsset",
+        "transactionLabel": "A test readAcrisAsset transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "updateAcrisAsset",
+        "transactionLabel": "A test updateAcrisAsset transaction",
+        "arguments": [
+            "001",
+            "some other value"
+        ],
+        "transientData": {}
+    },
+    {
+        "transactionName": "deleteAcrisAsset",
+        "transactionLabel": "A test deleteAcrisAsset transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]
