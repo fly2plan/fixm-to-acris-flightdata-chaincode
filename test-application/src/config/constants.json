@@ -1,0 +1,12 @@
+{
+    "channelName": "mychannel",
+    "chaincodeName": "fixmtoacriscovertercontract",
+    "userName" : "app-user1",
+    "orgName":"Org1",
+    "admins": [
+        {
+            "username": "admin",
+            "secret": "adminpw"
+        }
+    ]
+}

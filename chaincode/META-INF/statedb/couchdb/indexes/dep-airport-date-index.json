@@ -1,0 +1,8 @@
+{
+  "index":{
+    "fields":["flightData.originDate", "flightData.departureAirport"]
+  },
+  "ddoc":"indexDepAirportDateDoc",
+  "name":"indexDepAirportDate",
+  "type":"json"
+}

@@ -1,0 +1,8 @@
+{
+  "index":{
+    "fields":["flightData.operatingAirline.iataCode"]
+  },
+  "ddoc":"indexAirlineDoc",
+  "name":"indexAirline",
+  "type":"json"
+}
