@@ -20,21 +20,20 @@
 
 - Go to the test-application folder inside the fixm-to-acris-flightdata-chaincode directory and run npm install
 
-- Go to the network folder and run the fixm-to-acris-chain.sh script
-This script will :-
+- Go to the network folder and run the fixm-to-acris-chain.sh script.
+   ######  This script will :-
 
-    -Prune any existing network containers
-    -Export the binary path
-    -Spin up the network
-    -Create the channel
-    -Package & Deploy the chaincode in the channel
--Copy the latest connection profile to the test application folder  
-[ /test-application/src/config/]
--Registers and enrolls a sample user 
--Perform some sample transactions in the network
+            - Prune any existing network containers.
+            - Export the binary path.
+            - Spin up the network.
+            - Create the channel.
+            - Package & Deploy the chaincode in the channel.
+            - Copy the latest connection profile to the test application folder  .     [ /test-application/src/config/]
+            - Registers and enrolls a sample user 
+            - Perform some sample transactions in the network
 
-Once the script finishes its execution, you will have a sample fabric network with a deployed chaincode.
+          Once the script finishes its execution, you will have a sample fabric network with a deployed chaincode.
 
-You can run the testchaincode.js file inside the test-application folder to submit transactions to the chaincode
+         You can run the testchaincode.js file inside the test-application folder to submit transactions to the chaincode
 
    
