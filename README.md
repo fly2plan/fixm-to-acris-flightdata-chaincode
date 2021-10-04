@@ -10,10 +10,11 @@
    
    
 ### Pre-requisites
--Docker & Docker compose
--Nodejs , NPM
--Download the latest fabric samples
--Copy the bin folder[ Ignore if you have already setup the latest fabric binaries in your system] and the config folder from the fabric samples and paste it in the fixm-to--acris-flightdata-chaincode directory 
+
+- Docker & Docker compose
+- Nodejs , NPM
+- Download the latest fabric samples
+- Copy the bin folder[ Ignore if you have already setup the latest fabric binaries in your system] and the config folder from the fabric samples and paste it in the fixm-to-- acris-flightdata-chaincode directory 
 
 ### Booting up the network and deploying the chaincode [fixm-to-acris-flightdata-chaincode directory]
 
