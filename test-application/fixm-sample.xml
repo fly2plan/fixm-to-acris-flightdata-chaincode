@@ -138,7 +138,7 @@
 				</fx:cruisingLevel>
 				<fx:cruisingSpeed uom="KT">431.0</fx:cruisingSpeed>
 				<fx:flightRulesCategory>I</fx:flightRulesCategory>
-				<fx:routeText>INPUD1S INPUD Y102 UPALA M726 ANELA/N0479F340 UM726 LASGA DCT KUMER/N0483F360 DCT LBV UP992 ATTUS DCT VES P619 GUNPA/M082F360 DCT 63N010W/M082F380 64N020W 64N030W 63N040W 62N050W/M080F360 DCT NIFTY/M077F340 DCT MIBNO/N0442F340 DCT RODBO DCT 56N080W/N0463F380 5130N09000W/N0460F400 DCT VBI DCT DPR DCT CKW DCT HELPR DCT NORRA J107 OVETO DCT HEC RIIVR2</fx:routeText>
+				<fx:routeText>SAMPLE HERE ################################################</fx:routeText>
 				<fx:totalEstimatedElapsedTime>P0Y0M0DT11H22M0S</fx:totalEstimatedElapsedTime>
 			</fx:routeInformation>
 			<fx:takeoffMass uom="KG">305523.0</fx:takeoffMass>

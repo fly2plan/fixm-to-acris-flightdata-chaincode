@@ -34,7 +34,6 @@ const getDataFromObject=(dataObject : any,Key :any)=>{
                 }
                 break
             case 'undefined':
-                console.error(`The data for key : ${Key} is undefined, setting empty value`);
                 keyValue = ''
             }
     return keyValue;

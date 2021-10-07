@@ -16,23 +16,17 @@ export class AcrisDataContract extends Contract {
         const data: Uint8Array = await ctx.stub.getState(acrisDataKey);
         return (!!data && data.length > 0);
     }
-
-
     public async createAcrisDataModel(ctx: Context, flightDataValue: string): Promise<string> {
-        const acrisData = transformFixmToAcris(flightDataValue);
+        const acrisData = this.convertFixmToAcris(flightDataValue);
         const acrisDataKey = AcrisDataHelper.getUniqueKey(acrisData);
-        console.log(`Key : ${acrisDataKey}`);
-
-        const newAcrisDataModel: AcrisDataModel = {
-            flightData :acrisData ,
-            flightKey:acrisDataKey,
-            updaterId: getMspID(ctx),
-            txId:getTxnID(ctx),
-            docType:'ACRIS'
-        };
-        const buffer: Buffer = Buffer.from(AcrisDataHelper.serializeData(newAcrisDataModel));
-        await ctx.stub.putState(acrisDataKey, buffer);
-        console.info(`new data added with key : ${acrisDataKey}`);
+        const exists: boolean = await this.acrisDataExists(ctx, acrisDataKey);
+        if (exists) {
+            console.log(`Data already exists for key ${acrisDataKey}, proceeding with data updation`)
+            await this.updateExistingAcrisData(ctx,acrisDataKey,flightDataValue)
+        }else{
+            await this.setAcrisData(ctx,acrisData,acrisDataKey)
+            console.info(`data added with key : ${acrisDataKey}`);
+        }
         return acrisDataKey;
     }
 
@@ -41,26 +35,20 @@ export class AcrisDataContract extends Contract {
         if (!exists) {
             throw new Error(`The acris flight data ${acrisDataKey} does not exist`);
         }
-        const data: Uint8Array = await ctx.stub.getState(acrisDataKey);
-        const acrisDataModel: AcrisDataModel = JSON.parse(data.toString()) as AcrisDataModel;
+        const acrisDataModel = await this.getAcrisData(ctx,acrisDataKey)
         return acrisDataModel;
     }
-    public async updateAcrisDataModel(ctx: Context, acrisDataKey: string, flightDataValue: string): Promise<void> {
+    public async updateExistingAcrisData(ctx: Context, acrisDataKey: string, flightDataValue: any): Promise<void> {
         const exists: boolean = await this.acrisDataExists(ctx, acrisDataKey);
         if (!exists) {
-            throw new Error(`The acris data for key : ${acrisDataKey} does not exist`);
+            throw new Error(`The acris flight data ${acrisDataKey} does not exist`);
         }
-        const newFlightData = transformFixmToAcris(flightDataValue);
-        const flightDataBuffer = await ctx.stub.getState(acrisDataKey);
-        const currentAcrisDataModel: AcrisDataModel = JSON.parse(flightDataBuffer.toString()) as AcrisDataModel;
-        const mergedData:any = deepmerge(currentAcrisDataModel.flightData,newFlightData);
-        currentAcrisDataModel.flightData = mergedData;
-        currentAcrisDataModel.txId = getTxnID(ctx);
-        currentAcrisDataModel.updaterId = getMspID(ctx);
-        const buffer: Buffer = Buffer.from(JSON.stringify(currentAcrisDataModel));
-        await ctx.stub.putState(acrisDataKey, buffer);
-        console.info('Acris Data Updated');
+        const acrisData = this.convertFixmToAcris(flightDataValue);
+        const currentAcrisDataModel = await this.getAcrisData(ctx,acrisDataKey)
+        const mergedData:any = deepmerge(currentAcrisDataModel.flightData,acrisData);
+        await this.setAcrisData(ctx,mergedData,acrisDataKey)
     }
+
     public async getFlightHistory(ctx: Context, flightkey: string):Promise<AcrisDataHistory[]> {
         const rawData:any = await ctx.stub.getHistoryForKey(flightkey);
         // return rawData.toString()
@@ -70,6 +58,28 @@ export class AcrisDataContract extends Contract {
     public async getFlightQuery(ctx: Context, query: string):Promise<AcrisDataHistory[]> {
         const rawData:any = await ctx.stub.getQueryResult(query);
         return await AcrisDataHelper.iteratorToHistory(rawData);
+    }
+
+    private convertFixmToAcris(fixmValue:any){
+        return transformFixmToAcris(fixmValue);
+    }
+
+    private async setAcrisData(ctx:Context,acrisData:any,acrisDataKey:string,docTypeValue:string = 'ACRIS'){
+        const AcrisDataModel: AcrisDataModel = {
+            flightData :acrisData ,
+            flightKey:acrisDataKey,
+            updaterId: getMspID(ctx),
+            txId:getTxnID(ctx),
+            docType:docTypeValue
+        };
+        const buffer: Buffer = Buffer.from(AcrisDataHelper.serializeData(AcrisDataModel));
+        await ctx.stub.putState(acrisDataKey, buffer);
+    }
+
+    private async getAcrisData(ctx:Context,acrisDataKey:string){
+        const DataBuffer = await ctx.stub.getState(acrisDataKey);
+        const AcrisDataModel: AcrisDataModel = JSON.parse(DataBuffer.toString()) as AcrisDataModel;
+        return AcrisDataModel
     }
 
 

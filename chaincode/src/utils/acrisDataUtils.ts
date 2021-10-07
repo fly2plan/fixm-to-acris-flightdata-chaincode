@@ -16,7 +16,6 @@ export class AcrisDataHelper {
                 flightCode =this.getDataFromAcris(flightData,['operatingAirline','icaoCode']);
             }
             flightKey = originDate+departureAirport+flightCode+flightNumber;
-            console.log(originDate,departureAirport,flightCode);
         } catch (error) {
             console.error(error);
         }
@@ -33,9 +32,7 @@ export class AcrisDataHelper {
     public static getDataFromAcris(flightData: any,iterateKeys:any): any {
         let dataElement = flightData;
         iterateKeys.forEach(element => {
-            console.log(`data element for ${element} = ${dataElement[element]}`);
             if(dataElement[element] === undefined){
-                console.warn(`Undefined Value : value of ${element} is undefined`);
                 dataElement = null;
                 return dataElement;
             }else{

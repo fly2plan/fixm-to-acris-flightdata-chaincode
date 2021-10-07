@@ -52,7 +52,7 @@ const executeTransaction = async (channelName, chaincodeName, fcn, args, usernam
                     console.log(result.toString())
                     result = result.toString()
                     break;
-            case "updateAcrisDataModel":
+            case "updateExistingAcrisData":
                         logger.debug("=======createDigitalDocument==========")
                         result = await contract.submitTransaction(fcn, args[0],args[1]);
                         console.log(result.toString())
