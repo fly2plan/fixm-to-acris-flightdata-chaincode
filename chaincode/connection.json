@@ -1,0 +1,5 @@
+{
+  "address": "org1-cc-fixmtoacris:9999",
+  "dial_timeout": "20s",
+  "tls_required": false
+}

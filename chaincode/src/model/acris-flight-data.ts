@@ -3,16 +3,16 @@
  */
 
 export interface AcrisDataModel {
-    flightData: object;
-    flightKey: string;
-    // Which IATA entity updated the data.
-    updaterId: string;
-    txId: string;
-    docType: string;
+  flightData: object;
+  flightKey: string;
+  // Which IATA entity updated the data.
+  updaterId: string;
+  txId: string;
+  docType: string;
 }
 
 export interface AcrisDataHistory {
-    flightData: object;
-    timestamp: object;
-    key: string;
+  flightData: object;
+  timestamp: object;
+  key: string;
 }

@@ -64,15 +64,13 @@ export class ACRISFlight {
   originDate?: string;
   departure?: FlightDepartureInformation;
   arrival?: FlightArrivalInformation;
-//Excel mapping Air Traffic Control Facility
+  //Excel mapping Air Traffic Control Facility
   airTrafficControlFacility: string;
-//Aircraft Approach Category Code
+  //Aircraft Approach Category Code
 
- aircraftApproachCategoryCode: string;
- //Aircraft Dangerous Goods Limitation Code
- aircraftDangerousGoodsLimitationCode : string;
-
-
+  aircraftApproachCategoryCode: string;
+  //Aircraft Dangerous Goods Limitation Code
+  aircraftDangerousGoodsLimitationCode: string;
 
   /**
    * The status of the flight
@@ -105,18 +103,18 @@ export class ACRISFlight {
    */
   extensions?: {
     counts?: PaxCountExtension;
-    nb ?: MeteorologicalEnvironment[];
+    nb?: MeteorologicalEnvironment[];
     OperationalTimes?: OperationalTimes;
     TypeBRawMessage?: string;
     AircraftMovement?: AircraftMovement;
     AircraftTransport?: AircraftTransport;
     AirportFacility?: AirportFacility;
     Route?: AircraftMovementRoute;
-    RouteConstraint?: RouteConstraint
+    RouteConstraint?: RouteConstraint;
     ScheduledAircraftMovement?: ScheduledAircraftMovement;
     aircraftMovementConstraint?: AircraftMovementConstraint;
-    aircraftMovementEmergency?:AircraftMovementEmergency;
-    aircraftMovementIdentification?:AircraftMovementIdentification;
+    aircraftMovementEmergency?: AircraftMovementEmergency;
+    aircraftMovementIdentification?: AircraftMovementIdentification;
     aircraftMovementRouteConstraintType?: string;
     aircraftMovementRules?: string;
     aircraftMovementRulesCategoryCode?: string;
@@ -125,14 +123,12 @@ export class ACRISFlight {
     aircraftMovementTypeCode?: string;
     boundaryCrossingConditionCode?: string;
     CargoItem?: CargoItem;
-    
 
     [k: string]: unknown;
   };
-  
+
   [k: string]: unknown;
 }
-
 
 /**
  * The flight's operating flightNumber
@@ -639,7 +635,6 @@ export class AircraftMovementMeasure {
  * Information about the Aircraft Movement/Flight
  */
 export class AircraftMovement {
-
   /**
    * Information about the status of an Aircraft Movement/Flight
    */
@@ -882,57 +877,54 @@ export class AircraftMovement {
 
   airfileAircraftMovementCode?: string;
 
-
   actualTimeOfArrival?: string; // Actual Time Of Arrival
-  actualTimeOfDeparture? : string; // Actual Time Of Departure
-  airfileIndicatorCode? :string; // Airfile Indicator Code
+  actualTimeOfDeparture?: string; // Actual Time Of Departure
+  airfileIndicatorCode?: string; // Airfile Indicator Code
   alternateAirport?: string; // Alternate Airport
-  arrivalAirport?: string;  //Arrival Airport
-  arrivalAirportSlotIdentification: string;//Arrival Airport Slot Identification
-  atOrAboveAltitudeCode : string;  //At Or AboveAltitudeCode
-  cruiseClimbLevel?: string//Cruise Climb Level
+  arrivalAirport?: string; //Arrival Airport
+  arrivalAirportSlotIdentification: string; //Arrival Airport Slot Identification
+  atOrAboveAltitudeCode: string; //At Or AboveAltitudeCode
+  cruiseClimbLevel?: string; //Cruise Climb Level
   cruiseClimbSpeed?: string; //Cruise Climb Speed
-  cruisingLevelChangeActivation?: string;//Cruising Level Change Activation
+  cruisingLevelChangeActivation?: string; //Cruising Level Change Activation
   cruisingLevelChangeLevel?: string; // Cruising Level Change Level
   cruisingSpeedChangeActivation?: string; //Cruising Speed Change Activation
-  cruisingSpeedChangeSpeed?: string ; //Cruising Speed Change Speed
-  currentModeACode?: string ; //Current Mode A Code
+  cruisingSpeedChangeSpeed?: string; //Cruising Speed Change Speed
+  currentModeACode?: string; //Current Mode A Code
   delayDuration?: string; // Delay Duration
   delayReason?: string; //Delay Reason
   delayReference?: string; //Delay Reference
   delayType?: string; //Delay Type
-  departureAirportSlotIdentification?: string ; //Departure Airport Slot Identification
+  departureAirportSlotIdentification?: string; //Departure Airport Slot Identification
   destinationAirport?: string; //Destination Airport
-  destinationAirportAlternate?: string ;//Destination Airport Alternate
-  destinationAirportPrevious?: string;//Destination Airport Previous
-  estimatedAircraftTakeoffMass?: string ;//Estimated Aircraft Takeoff Mass
-  estimatedElapsedTime?: string ;// Estimated Elapsed Time
-  estimatedOffBlockTime?: string;  //Estimated Off Block Time
-  estimatedOffBlockTimePrevious?: string; 
-  flightPlanOriginatorParty?: string ; //Flight Plan Originator Party
+  destinationAirportAlternate?: string; //Destination Airport Alternate
+  destinationAirportPrevious?: string; //Destination Airport Previous
+  estimatedAircraftTakeoffMass?: string; //Estimated Aircraft Takeoff Mass
+  estimatedElapsedTime?: string; // Estimated Elapsed Time
+  estimatedOffBlockTime?: string; //Estimated Off Block Time
+  estimatedOffBlockTimePrevious?: string;
+  flightPlanOriginatorParty?: string; //Flight Plan Originator Party
   flightPlanSubmitterParty?: string; //Flight Plan Submitter Party
   flightRuleType?: AircraftMovementRuleType; //Flight Rule Type
-  fuelEnduranceDuration?: string;//Fuel Endurance Duration
+  fuelEnduranceDuration?: string; //Fuel Endurance Duration
   gufiOriginatorParty?: string; //GUFI Originator Party
-  inboundOrigin?: string;  // Inbound Origin
-  inboundOriginPrevious?: string;  // Inbound Origin Previous
+  inboundOrigin?: string; // Inbound Origin
+  inboundOriginPrevious?: string; // Inbound Origin Previous
   operator?: string;
-  personsOnBoardQuantity?: string;    // Persons On Board Quantity
-  pilotInCommand?: string;//Pilot In Command
+  personsOnBoardQuantity?: string; // Persons On Board Quantity
+  pilotInCommand?: string; //Pilot In Command
   profilePointAirSpeed?: string; //Profile Point Air Speed
   profilePointDistance?: string; // Profile Point Distance
-  profilePointAltitude?: string;  // Profile Point Altitude
-  profilePointSequenceIdentifier?: string // Profile Point Sequence Identifier
-  profilePointTimeDuration?: string;  // Profile Point Time Duration
+  profilePointAltitude?: string; // Profile Point Altitude
+  profilePointSequenceIdentifier?: string; // Profile Point Sequence Identifier
+  profilePointTimeDuration?: string; // Profile Point Time Duration
   remarks?: string;
   runwayLandingDirection?: string; // Runway Landing Direction
-  runwayTakeoffDirection?: string;  // Runway Takeoff Direction
+  runwayTakeoffDirection?: string; // Runway Takeoff Direction
   specialHandlingReason?: string; // Special Handling Reason
-  speedScheduleInitialSpeed?: string;// Speed Schedule Initial Speed
+  speedScheduleInitialSpeed?: string; // Speed Schedule Initial Speed
   speedScheduleSubsequentSpeed?: string; // Speed Schedule Subsequent Speed
   takeOffAlternateAerodrome?: string; //Take Off Alternate Aerodrome
-
-
 
   //Alternate Airport
   [k: string]: unknown;
@@ -1036,23 +1028,23 @@ export class AircraftTransport {
       Identifier?: string;
       [k: string]: unknown;
     };
-  CommunicationCapabilityCode?: string[];
-  datalinkCommunicationCapabilityCodeList? : string[];
-  dinghies? : DinDinghy ;
-  emergencyRadioCapabilityTypeList? : string;
-  navigationCapabilityCodeList?: string;
-  lifeJacketType?: string;
-  navigationAidDesignator ?: string;
-  navigationCapabilityCode?: string;
-  otherCommunicationCapabilities?: string;
-  otherDatalinkCapabilities?: string;
-  otherNavigationCapabilities?: string;
-  otherSurveillanceCapabilities?: string;
-  performanceBasedCode?: string;
-  surveillanceCapabilityCode?: string;
-  survivalEquipmentRemarks?: string;
-  survivalEquipmentType?: string;
-  SelectiveCallingCode?: string
+    CommunicationCapabilityCode?: string[];
+    datalinkCommunicationCapabilityCodeList?: string[];
+    dinghies?: DinDinghy;
+    emergencyRadioCapabilityTypeList?: string;
+    navigationCapabilityCodeList?: string;
+    lifeJacketType?: string;
+    navigationAidDesignator?: string;
+    navigationCapabilityCode?: string;
+    otherCommunicationCapabilities?: string;
+    otherDatalinkCapabilities?: string;
+    otherNavigationCapabilities?: string;
+    otherSurveillanceCapabilities?: string;
+    performanceBasedCode?: string;
+    surveillanceCapabilityCode?: string;
+    survivalEquipmentRemarks?: string;
+    survivalEquipmentType?: string;
+    SelectiveCallingCode?: string;
     [k: string]: unknown;
   };
   /**
@@ -1196,15 +1188,15 @@ export class AirportFacility {
    */
   IATAIdentifier?: string;
 
-    /**
+  /**
    * The code assigned to the facility (airport facility) by ICAO to the Host Airport
    */
-    ICAOdentifier?: string;
-   /**
+  ICAOdentifier?: string;
+  /**
     * The primary official name of an aerodrome as designated by an appropriate authority. [AIXM 5.1]
 
     */
-   Name?: string;
+  Name?: string;
   /**
    * Information about the runway used by this flight
    */
@@ -1212,7 +1204,7 @@ export class AirportFacility {
     /**
      * Runway identifier. For example, 27L, 09R, 23.
      */
-  RunwayIdentifier?: string;
+    RunwayIdentifier?: string;
     [k: string]: unknown;
   };
   /**
@@ -1476,46 +1468,46 @@ export class AircraftMovementRoute {
   /**
    * The point at which a change of airspeed is requested.
    */
-TrueAirspeedPoint?: string;
-airfileRouteStartTime?: string; //Airfile Route Start Time
-alongRouteDistance?: string; // Along RouteDistance
-altimeterSetting?: string;  //  Altimeter Setting
-boundaryCrossingClearedLevel?: string; // Boundary Crossing Cleared Level
-boundaryCrossingCondition?: string;
-boundaryCrossingLevel?: any;
-boundaryCrossingPoint?: any;
-boundaryCrossingTime?: string;
-cruisingLevel?: any;
-cruisingSpeed?: string
-divertAirport?: string;
-elementStartPoint?: any;
-estimatedElapsedTimeLongitude?: string;
-estimatedElapsedTimePoint?: string
-estimatedElapsedTimeRegion?: string;
-flightRulesChange?: string;
-levelAltitude?: string;
-modifiedRouteItemCode?: string;
-modifiedRouteItemReference?: string
-otherRouteDesignator?: string;
-position?: string;
-predictedAirspeed?: string;
-predictedGroundspeed?: string;
-rankedTrajectory?: string;
-reclearanceInFlightRoute?: string;
-routeChange?: string;
-routeDesignator?: string;
-routeToRevisedDestination?: string;
-routeTruncationCode?: string;
-standardInstrumentArrivalIdentifier?: any;
-standardInstrumentDepartureIdentifier?: string;
-totalEstimatedElapsedTime?: string;
-trajectoryPointDescription?: string;
-trajectoryPointProperty?:string;
-trajectoryPointPropertyType?:string;
-verticalRange?:string;
-rankedTrajectoryIdentifier?: string;
+  TrueAirspeedPoint?: string;
+  airfileRouteStartTime?: string; //Airfile Route Start Time
+  alongRouteDistance?: string; // Along RouteDistance
+  altimeterSetting?: string; //  Altimeter Setting
+  boundaryCrossingClearedLevel?: string; // Boundary Crossing Cleared Level
+  boundaryCrossingCondition?: string;
+  boundaryCrossingLevel?: any;
+  boundaryCrossingPoint?: any;
+  boundaryCrossingTime?: string;
+  cruisingLevel?: any;
+  cruisingSpeed?: string;
+  divertAirport?: string;
+  elementStartPoint?: any;
+  estimatedElapsedTimeLongitude?: string;
+  estimatedElapsedTimePoint?: string;
+  estimatedElapsedTimeRegion?: string;
+  flightRulesChange?: string;
+  levelAltitude?: string;
+  modifiedRouteItemCode?: string;
+  modifiedRouteItemReference?: string;
+  otherRouteDesignator?: string;
+  position?: string;
+  predictedAirspeed?: string;
+  predictedGroundspeed?: string;
+  rankedTrajectory?: string;
+  reclearanceInFlightRoute?: string;
+  routeChange?: string;
+  routeDesignator?: string;
+  routeToRevisedDestination?: string;
+  routeTruncationCode?: string;
+  standardInstrumentArrivalIdentifier?: any;
+  standardInstrumentDepartureIdentifier?: string;
+  totalEstimatedElapsedTime?: string;
+  trajectoryPointDescription?: string;
+  trajectoryPointProperty?: string;
+  trajectoryPointPropertyType?: string;
+  verticalRange?: string;
+  rankedTrajectoryIdentifier?: string;
 
-[k: string]: unknown;
+  [k: string]: unknown;
 }
 /**
  * Information about the Route of the Aircraft Movement
@@ -1656,72 +1648,61 @@ export class AircraftMovementType {
   [k: string]: unknown;
 }
 
-
 export class DinDinghy {
   totalCapacity?: number;
-  color?:string;
+  color?: string;
   quantity?: number;
   cover?: string;
   persoCapacity: number;
-  
-
-
 }
 export class AircraftMovementConstraint {
   applicabilityDescription?: string;
-  restrictionReference? : string;
+  restrictionReference?: string;
   impactDescription?: string;
-
-
 }
 
 export class AircraftMovementEmergency {
-actionTaken?: string
-atsOriginatorIcaoIdentifier?:string;
-emergencyDescription?: string;
-determinationMethod?: string;
-lastContactATSUnit? : string;
-lastContactFrequency?: string;
-lastContactTime?: string;
-lastKnownPositionLocation?: string;
-lastKnownPositionTime?: string;
-otherInformation?: string;
-phaseIdentifier?: string;
-radioFailureRemarks?: string;
-remainingCommunicationCapability?: string;
+  actionTaken?: string;
+  atsOriginatorIcaoIdentifier?: string;
+  emergencyDescription?: string;
+  determinationMethod?: string;
+  lastContactATSUnit?: string;
+  lastContactFrequency?: string;
+  lastContactTime?: string;
+  lastKnownPositionLocation?: string;
+  lastKnownPositionTime?: string;
+  otherInformation?: string;
+  phaseIdentifier?: string;
+  radioFailureRemarks?: string;
+  remainingCommunicationCapability?: string;
 }
 
-export class AircraftMovementIdentification{
-
-  aircraftIdentification?: string ;//Aircraft Identification
-  aircraftIdentificationPrevious?:string; //Aircraft Identification Previous
+export class AircraftMovementIdentification {
+  aircraftIdentification?: string; //Aircraft Identification
+  aircraftIdentificationPrevious?: string; //Aircraft Identification Previous
   globallyUniqueFlightIdentifier?: string;
-
 }
-export class RouteConstraint{
-
+export class RouteConstraint {
   departureOrArrivalCode?: string;
   description?: string;
   levelConstraintActivation?: string;
   levelConstraintCondition?: string;
   levelConstraintLevel?: string;
-  restrictionReference?: string
+  restrictionReference?: string;
   speedConstraintActivation?: string;
   speedConstraintCondition?: string;
   speedConstraintSpeed?: string;
   timeConstraintCondition?: string;
   timeSpecification?: string;
-
 }
 
-export class AircraftTransportFormation{
-   Count?: number;
-   Identifier?: string;
-   AircraftTransportType?: AircraftTransportType[]
-
+export class AircraftTransportFormation {
+  Count?: number;
+  Identifier?: string;
+  AircraftTransportType?: AircraftTransportType[];
 }
 
-export class PackageGroupType{
+export class PackageGroupType {
   DangerousGoodsLimitation?: string;
   DangerousGoodsQuantity?: string;
   DangerousGoodsVolume?: string;
@@ -1736,52 +1717,50 @@ export class PackageGroupType{
   ProperShippingName?: string;
 }
 
-export class CargoItem{
-AirWaybillNumber: string
-AircraftCargoLimitation?: string;
-Category?: string
-CompatibilityGroup?: string;
-CriticalSafetyIndex?: string;
-OnboardLocation?: string;
-ShipmentAuthorisations?: string;
-ShippingInformation?: string;
-SubsidiaryHazardClassAndDivision?: string;
-PackageGroupType: PackageGroupType[];
+export class CargoItem {
+  AirWaybillNumber: string;
+  AircraftCargoLimitation?: string;
+  Category?: string;
+  CompatibilityGroup?: string;
+  CriticalSafetyIndex?: string;
+  OnboardLocation?: string;
+  ShipmentAuthorisations?: string;
+  ShippingInformation?: string;
+  SubsidiaryHazardClassAndDivision?: string;
+  PackageGroupType: PackageGroupType[];
 }
 
-export class MeteorologicalEnvironment{
-Temperature?: string;
-WindDirection?: string;
-WindSpeed?: string;
+export class MeteorologicalEnvironment {
+  Temperature?: string;
+  WindDirection?: string;
+  WindSpeed?: string;
 }
 
-export class CargoItemType{
-
-CommunicationCapabilityCode?: string;
-ConstraintActivationCode?: string;
-DatalinkCommunicationCapabilityCode?: string;
-DepartureOrArrivalCode?: string;
-DinghyCoverTypeCode?: string;
-EmergencyPhaseCode?: string;
-EmergencyRadioCapabilityTypeCode?: string;
-EnRouteDelayTypeCode?: string;
-LevelConditionCode?: string;
-LifeJacketTypeCode?:string;
-ModifiedRouteItemCode?: string;
-NavigationAidServiceTypeCode?: string;
-NavigationCapabilityCode?: string;
-OtherRouteDesignatorCode?: string;
-PackingGroupCode?: string;
-PerformanceBasedNavigationCapabilityCode?: string;
-RadioactiveMaterialCategoryCode?: string;
-RouteTruncationCode?: string;
-SpecialHandlingReasonCode?: string;
-SpeedConditionCode?: string;
-StandardCapabilitiesCode?: string;
-SurveillanceCapabilityCode?: string;
-SurvivalEquipmentTypeCode?: string
-TimeConditionCode?: string;
-TrajectoryPointPropertyTypeCode?: string;
-WakeTurbulenceCategoryCode?: string;
-
+export class CargoItemType {
+  CommunicationCapabilityCode?: string;
+  ConstraintActivationCode?: string;
+  DatalinkCommunicationCapabilityCode?: string;
+  DepartureOrArrivalCode?: string;
+  DinghyCoverTypeCode?: string;
+  EmergencyPhaseCode?: string;
+  EmergencyRadioCapabilityTypeCode?: string;
+  EnRouteDelayTypeCode?: string;
+  LevelConditionCode?: string;
+  LifeJacketTypeCode?: string;
+  ModifiedRouteItemCode?: string;
+  NavigationAidServiceTypeCode?: string;
+  NavigationCapabilityCode?: string;
+  OtherRouteDesignatorCode?: string;
+  PackingGroupCode?: string;
+  PerformanceBasedNavigationCapabilityCode?: string;
+  RadioactiveMaterialCategoryCode?: string;
+  RouteTruncationCode?: string;
+  SpecialHandlingReasonCode?: string;
+  SpeedConditionCode?: string;
+  StandardCapabilitiesCode?: string;
+  SurveillanceCapabilityCode?: string;
+  SurvivalEquipmentTypeCode?: string;
+  TimeConditionCode?: string;
+  TrajectoryPointPropertyTypeCode?: string;
+  WakeTurbulenceCategoryCode?: string;
 }
